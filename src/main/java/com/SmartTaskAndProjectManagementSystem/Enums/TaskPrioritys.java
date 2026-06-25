@@ -1,6 +1,7 @@
 package com.SmartTaskAndProjectManagementSystem.Enums;
 
-public enum TaskStatus {
-	TODO,IN_PROGRESS,DONE;
+public enum TaskPrioritys {
+	 
+	LOW ,MEDIUMN,HIGH,CRITICAL
 
 }
