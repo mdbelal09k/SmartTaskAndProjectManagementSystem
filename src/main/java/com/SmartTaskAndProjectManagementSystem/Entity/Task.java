@@ -19,16 +19,22 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "tasks")
 public class Task extends BaseEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Long id;
 	@Column(nullable = false)
 
 	private String title;
@@ -45,7 +51,7 @@ public class Task extends BaseEntity {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "project_id")
-	private Project projects;
+	private Project project;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "assigned_member_id")
@@ -53,4 +59,5 @@ public class Task extends BaseEntity {
 
 	@OneToMany(mappedBy = "task", cascade = CascadeType.ALL)
 	private List<Comment> comments;
+
 }

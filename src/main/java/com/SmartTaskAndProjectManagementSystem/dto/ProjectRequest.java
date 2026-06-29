@@ -6,17 +6,19 @@ import java.util.List;
 
 import com.SmartTaskAndProjectManagementSystem.Enums.ProjectStatus;
 
-import jakarta.validation.constraints.NotBlank;
+
+
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Data
 public class ProjectRequest {
 
-	@NotBlank(message = "project name is required.")
+	@NotNull(message = "project name is required.")
 	private String name;
 	private String description;
 	private ProjectStatus status = ProjectStatus.NEW;
-	@NotBlank(message="start date is required.")
+	@NotNull(message="start date is required.")
 	private LocalDate startDate;
 	private LocalDate endDate;
 	private List<Long> TeamMemberIds;

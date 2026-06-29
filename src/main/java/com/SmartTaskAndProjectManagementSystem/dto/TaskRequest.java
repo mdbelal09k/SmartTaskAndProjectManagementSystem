@@ -19,7 +19,7 @@ public class TaskRequest {
 	private TaskPrioritys prioritys = TaskPrioritys.MEDIUMN;
 	private LocalDate dueDate;
 	@NotNull(message="project ID is requird!")
-	private Long ProjectId;
+	private Long projectId;
 	private Long assignedMemberId;
 
 }

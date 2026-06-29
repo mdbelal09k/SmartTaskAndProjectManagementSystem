@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ProjectResponse {
 
-    private int id;
+    private Long id;
     private String name;
     private String description;
     private ProjectStatus status;
